@@ -149,6 +149,12 @@ footer .brand img { height: 22px; }
 footer .tagline { font-size: 18px; color: var(--muted); }
 footer .wrap { display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center; padding-block: 28px; font-size: 13px; color: var(--muted); }
 
+.passos { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 10px; color: var(--muted); }
+.passos strong { color: var(--text); font-weight: 600; }
+.passos li::marker { color: var(--forno); font-weight: 700; }
+.ja-aprovado { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; margin-top: 4px; }
+.ja-aprovado small { color: var(--muted); font-size: 12px; }
+
 /* trilha de migalhas: oito pontos que se apagam (manual de marca, tema escuro) */
 .trail { display: inline-flex; gap: 10px; align-items: center; }
 .trail i { width: 8px; height: 8px; border-radius: 50%; display: block; }

@@ -24,6 +24,7 @@
       <a class="hide-sm" href="#privacidade">Privacidade</a>
       <a class="hide-sm" href="#plataformas">Plataformas</a>
       <a class="hide-sm" href="#perguntas">Perguntas</a>
+      <a class="hide-sm" href="https://crumbs-convites.higor-com.workers.dev/entrar">Entrar</a>
       <a class="btn btn-primary" href="#convite">Pedir convite</a>
     </nav>
   </div>
@@ -203,6 +204,18 @@
         <div><p>O app está em beta. Liberar aos poucos nos deixa conversar com quem está usando e corrigir o que aparecer antes de abrir para todo mundo.</p></div>
       </details>
       <details>
+        <summary>Como fico sabendo que fui aprovado?</summary>
+        <div>
+          <p>Não mandamos e-mail, porque não pedimos o seu. Para ver se o pedido foi liberado, volte ao site e clique em <a href="https://crumbs-convites.higor-com.workers.dev/entrar">“Já fui aprovado: entrar e baixar”</a>. Se ainda estiver na fila, a página avisa.</p>
+        </div>
+      </details>
+      <details>
+        <summary>O que o login com o GitHub acessa?</summary>
+        <div>
+          <p>Só o seu nome de usuário público, para conferir se o pedido foi aprovado. O login não pede nenhuma permissão: não vê seus repositórios, nem os privados, e não guardamos nada da sua conta. Os links de download valem por 30 minutos.</p>
+        </div>
+      </details>
+      <details>
         <summary>O que o crumbs lê no meu computador?</summary>
         <div>
           <p>Só as pastas que você escolher como raiz e, dentro delas: o estado do git, os documentos do projeto (README, <code>docs/</code>, <code>TODO.md</code> e afins) e a memória e o histórico das ferramentas de IA, como a pasta <code>~/.claude</code>.</p>
@@ -239,7 +252,16 @@
         <span class="eyebrow">BETA FECHADO</span>
         <p class="script tagline">Volte de onde parou.</p>
         <h2>Tudo o que ficou para depois, esperando por você.</h2>
-        <p class="muted">O crumbs é gratuito e está em beta com devs convidados. Peça o seu acesso: se aprovado, você recebe um convite do GitHub no e-mail da sua conta e baixa o instalador para o seu sistema.</p>
+        <p class="muted">O crumbs é gratuito e está em beta com devs convidados. O acesso funciona assim:</p>
+        <ol class="passos">
+          <li><strong>Peça o convite</strong> no formulário, com o seu usuário do GitHub.</li>
+          <li><strong>Aguarde a aprovação.</strong> Analisamos cada pedido à mão, normalmente em poucos dias.</li>
+          <li><strong>Volte aqui e entre com o GitHub</strong> em “Já fui aprovado”. Se o pedido estiver liberado, você baixa o instalador do seu sistema na hora.</li>
+        </ol>
+        <div class="ja-aprovado">
+          <a class="btn btn-ghost" href="https://crumbs-convites.higor-com.workers.dev/entrar">Já fui aprovado: entrar e baixar</a>
+          <small>O login só confirma o seu usuário. O crumbs não pede acesso aos seus repositórios.</small>
+        </div>
         <div class="counter" id="contador" hidden>
           <div><strong id="n-downloads">0</strong><span>downloads</span></div>
           <div><strong id="n-convites">0</strong><span>devs no beta</span></div>
@@ -250,7 +272,7 @@
         <div class="field">
           <label for="f-github">Usuário do GitHub</label>
           <input id="f-github" name="github" autocomplete="username" autocapitalize="off" spellcheck="false" placeholder="seu-usuario" required maxlength="40" aria-describedby="f-github-ajuda">
-          <small id="f-github-ajuda">O convite chega por ele. Não pedimos e-mail.</small>
+          <small id="f-github-ajuda">É com ele que você vai entrar para baixar. Não pedimos e-mail.</small>
         </div>
         <fieldset class="os-pick">
           <legend>Sistema</legend>

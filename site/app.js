@@ -44,8 +44,8 @@ function configurarFormulario() {
       if (r.ok) {
         form.reset();
         avisar(resp.repetido
-          ? "Já tínhamos o seu pedido. Assim que for aprovado, o convite chega no e-mail da sua conta do GitHub."
-          : "Pedido recebido! Se aprovado, o convite chega no e-mail da sua conta do GitHub.", "ok");
+          ? "Já tínhamos o seu pedido. Para ver se foi aprovado, use “Já fui aprovado: entrar e baixar”."
+          : "Pedido recebido! Daqui a alguns dias, volte aqui e use “Já fui aprovado: entrar e baixar”.", "ok");
       } else {
         avisar(resp.erro || "Não foi possível enviar agora. Tente de novo em instantes.", "erro");
       }
