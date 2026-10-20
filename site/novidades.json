@@ -1,0 +1,23 @@
+{
+  "versao_atual": "v0.1.1",
+  "versoes": [
+    {
+      "versao": "v0.1.1",
+      "data": "2026-10-20",
+      "itens": [
+        "Nova identidade visual: ícone do biscoito no instalador, no menu e na barra de título.",
+        "Tema Claro com as cores da marca: fundo creme e destaques em marrom.",
+        "Nome em minúsculas na interface: crumbs."
+      ]
+    },
+    {
+      "versao": "v0.1.0",
+      "data": "2026-10-19",
+      "itens": [
+        "Primeira versão do beta: Projetos, Pendências e Sessões de IA.",
+        "Pendências da memória do Claude Code e tarefas encontradas nos documentos do projeto.",
+        "Git de relance, abrir no VS Code (inclusive projetos no WSL) e temas Carvão e Claro."
+      ]
+    }
+  ]
+}

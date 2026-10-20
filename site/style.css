@@ -158,6 +158,16 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 16px; justify-content: space
 .feedback-box { border: 1px solid var(--border); border-radius: 16px; background: var(--panel); padding: 40px; display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 32px; align-items: center; }
 @media (max-width: 960px) { .feedback-box { grid-template-columns: minmax(0, 1fr); padding: 28px; } }
 
+.versao-atual { align-self: flex-start; font-size: 15px; padding: 8px 14px; border-radius: 999px; border: 1px solid #5a3c1f; background: #2b2420; color: var(--text); }
+.versao-atual strong { color: var(--forno); }
+.novidades { display: flex; flex-direction: column; gap: 16px; max-width: 860px; }
+.versao { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 22px 24px; display: flex; flex-direction: column; gap: 10px; }
+.versao header { display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.versao h3 { margin: 0; font-size: 18px; }
+.versao time { color: var(--muted); font-size: 14px; }
+.versao ul { margin: 0; padding-left: 20px; color: var(--muted); display: flex; flex-direction: column; gap: 6px; }
+.versao li::marker { color: var(--forno); }
+
 /* trilha de migalhas: oito pontos que se apagam (manual de marca, tema escuro) */
 .trail { display: inline-flex; gap: 10px; align-items: center; }
 .trail i { width: 8px; height: 8px; border-radius: 50%; display: block; }

@@ -3,6 +3,7 @@ name: Publicar site
 # Publica a pasta site/ no GitHub Pages e, antes, atualiza stats.json com:
 #  - downloads: soma dos downloads dos instaladores nas releases do repositório de instaladores
 #  - convites:  pedidos aprovados no repositório de convites
+# e acerta a "versão atual" de novidades.json pela última release publicada.
 # Roda a cada push e de hora em hora. Segredos: BETA_TOKEN (organização crumbs-lab, releases) e AUTOMACAO_TOKEN (conta pessoal, issues de convite).
 
 on:
@@ -54,6 +55,13 @@ jobs:
               const instalador = /\.(exe|msi|dmg|AppImage|deb|rpm)$/;
               const releases = await api(process.env.BETA_TOKEN, `/repos/${process.env.BETA_REPO}/releases?per_page=100`);
               stats.downloads = releases.flatMap((r) => r.assets).filter((a) => instalador.test(a.name)).reduce((n, a) => n + a.download_count, 0);
+              // Versão atual em "Novidades" = última release publicada (as notas continuam em novidades.json).
+              const atual = releases.find((r) => !r.draft && /^v\d/.test(r.tag_name));
+              if (atual) {
+                const nov = JSON.parse(fs.readFileSync("site/novidades.json", "utf8"));
+                nov.versao_atual = atual.tag_name;
+                fs.writeFileSync("site/novidades.json", JSON.stringify(nov, null, 2) + "\n");
+              }
             } else core.notice("Sem BETA_TOKEN: downloads não atualizados.");
             if (process.env.CONVITES_TOKEN) {
               const q = encodeURIComponent(`repo:${process.env.CONVITES_REPO} is:issue label:aprovado`);

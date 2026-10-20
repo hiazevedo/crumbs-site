@@ -58,5 +58,41 @@ function configurarFormulario() {
   });
 }
 
+async function carregarNovidades() {
+  const lista = document.getElementById("lista-novidades");
+  try {
+    const r = await fetch("novidades.json", { cache: "no-store" });
+    if (!r.ok) return;
+    const n = await r.json();
+    if (n.versao_atual) {
+      document.getElementById("versao-atual-num").textContent = n.versao_atual;
+      document.getElementById("versao-atual").hidden = false;
+    }
+    const data = (iso) => new Date(`${iso}T12:00:00`).toLocaleDateString("pt-BR", { day: "numeric", month: "long", year: "numeric" });
+    for (const v of (n.versoes || []).slice(0, 5)) {
+      const art = document.createElement("article");
+      art.className = "versao";
+      const cab = document.createElement("header");
+      const h = document.createElement("h3");
+      h.textContent = v.versao;
+      const t = document.createElement("time");
+      t.dateTime = v.data;
+      t.textContent = data(v.data);
+      cab.append(h, t);
+      const ul = document.createElement("ul");
+      for (const item of v.itens || []) {
+        const li = document.createElement("li");
+        li.textContent = item;
+        ul.append(li);
+      }
+      art.append(cab, ul);
+      lista.append(art);
+    }
+  } catch {
+    /* sem novidades: a seção fica só com o texto */
+  }
+}
+
 carregarContador();
+carregarNovidades();
 configurarFormulario();
