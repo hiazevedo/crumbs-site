@@ -21,6 +21,7 @@ function configurarFormulario() {
   const form = document.getElementById("form-convite");
   const status = document.getElementById("f-status");
   const botao = document.getElementById("f-enviar");
+  const carregando = document.getElementById("f-carregando");
   const avisar = (msg, tipo) => { status.textContent = msg; status.className = `status ${tipo}`; };
 
   form.addEventListener("submit", async (e) => {
@@ -31,6 +32,7 @@ function configurarFormulario() {
     if (!dados.sistema) return avisar("Escolha o seu sistema.", "erro");
 
     botao.disabled = true;
+    carregando.hidden = false;
     avisar("Enviando…", "");
     try {
       const r = await fetch(WORKER_URL, {
@@ -50,6 +52,7 @@ function configurarFormulario() {
     } catch {
       avisar("Não foi possível enviar agora. Tente de novo em instantes.", "erro");
     } finally {
+      carregando.hidden = true;
       botao.disabled = false;
     }
   });

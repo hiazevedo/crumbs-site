@@ -3,13 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Crumbs — o que você deixou para depois, em um lugar só</title>
+<title>crumbs — nunca perca o fio da meada</title>
 <meta name="description" content="Painel local, somente leitura e sem rede que junta git, documentação e os lembretes das suas conversas com IA, para você retomar qualquer projeto de onde parou.">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://crumbs-convites.higor-com.workers.dev; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#191c21">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preload" href="fonts/jetbrains-mono-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
 <script src="app.js" defer></script>
 </head>
@@ -17,11 +18,12 @@
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#topo" aria-label="Crumbs, início">crumbs</a>
+    <a class="brand" href="#topo"><img src="img/logo-horizontal.svg" alt="crumbs, início" width="122" height="30"></a>
     <nav class="nav" aria-label="Seções do site">
       <a class="hide-sm" href="#recursos">Recursos</a>
       <a class="hide-sm" href="#privacidade">Privacidade</a>
       <a class="hide-sm" href="#plataformas">Plataformas</a>
+      <a class="hide-sm" href="#perguntas">Perguntas</a>
       <a class="btn btn-primary" href="#convite">Pedir convite</a>
     </nav>
   </div>
@@ -33,7 +35,7 @@
     <div class="stack" style="gap: 24px">
       <span class="pill">Beta fechado · gratuito</span>
       <h1>O que você deixou <em>para depois</em>, em um lugar só.</h1>
-      <p class="lead">O Crumbs indexa a sua pasta de projetos e junta git, documentação e o rastro das suas conversas com IA. Os lembretes que você pediu para o Claude guardar e as tarefas esquecidas em <code>docs/</code> voltam para a sua frente.</p>
+      <p class="lead">O crumbs indexa a sua pasta de projetos e junta git, documentação e o rastro das suas conversas com IA. Os lembretes que você pediu para o Claude guardar e as tarefas esquecidas em <code>docs/</code> voltam para a sua frente.</p>
       <div class="actions">
         <a class="btn btn-primary" href="#convite">Pedir acesso ao beta</a>
         <a class="btn btn-ghost" href="#recursos">Ver recursos</a>
@@ -45,8 +47,8 @@
       </div>
     </div>
 
-    <div class="mock" role="img" aria-label="Janela do Crumbs mostrando a lista de projetos e as pendências de um projeto">
-      <div class="mock-bar"><span>Crumbs</span><span class="win"><span>—</span><span>▢</span><span>✕</span></span></div>
+    <div class="mock" role="img" aria-label="Janela do crumbs mostrando a lista de projetos e as pendências de um projeto">
+      <div class="mock-bar"><span><img src="img/simbolo.svg" alt="">crumbs</span><span class="win"><span>—</span><span>▢</span><span>✕</span></span></div>
       <div class="mock-body">
         <div class="mock-side">
           <div class="mock-nav">Projetos<span>8</span></div>
@@ -82,11 +84,13 @@
 <section class="band quote">
   <div class="wrap">
     <p>“Agora não vamos mexer nessa feature, a prioridade é outra. <em>Deixe salvo na memória para depois.</em>”</p>
-    <p>Você já disse isso para uma IA. O lembrete ficou guardado numa pasta escondida, num projeto que você só vai abrir daqui a dois meses. O Crumbs traz esses lembretes de volta.</p>
+    <p>Você já disse isso para uma IA. O lembrete ficou guardado numa pasta escondida, num projeto que você só vai abrir daqui a dois meses. O crumbs traz esses lembretes de volta.</p>
   </div>
 </section>
 
-<section id="recursos" class="section">
+<div class="divider"><span class="trail" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+
+<section id="recursos" class="section" style="padding-top: 72px">
   <div class="wrap stack" style="gap: 48px">
     <div class="stack" style="max-width: 720px">
       <span class="eyebrow">RECURSOS</span>
@@ -106,7 +110,7 @@
       <article class="card">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#98c379" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>
         <h3>“Possivelmente resolvido”</h3>
-        <p>Quando uma nota diz que o problema foi corrigido, ou uma ação concluída cita um achado, o Crumbs marca o item em vez de deixar a lista inflada.</p>
+        <p>Quando uma nota diz que o problema foi corrigido, ou uma ação concluída cita um achado, o crumbs marca o item em vez de deixar a lista inflada.</p>
       </article>
       <article class="card">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c678dd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -145,7 +149,7 @@
     </div>
     <div class="grid3">
       <div class="step" style="border-color:#61afef"><span style="color:#61afef;font-weight:800">01</span><h3>Escolha a pasta raiz</h3><p class="muted">A pasta onde ficam os seus projetos. No Windows, pode ser uma pasta dentro do WSL.</p></div>
-      <div class="step" style="border-color:#c678dd"><span style="color:#c678dd;font-weight:800">02</span><h3>O Crumbs descobre</h3><p class="muted">Repositórios, stacks, documentação e ferramentas de IA de cada projeto, em segundos e em paralelo.</p></div>
+      <div class="step" style="border-color:#c678dd"><span style="color:#c678dd;font-weight:800">02</span><h3>O crumbs descobre</h3><p class="muted">Repositórios, stacks, documentação e ferramentas de IA de cada projeto, em segundos e em paralelo.</p></div>
       <div class="step" style="border-color:#e06c75"><span style="color:#e06c75;font-weight:800">03</span><h3>Você retoma</h3><p class="muted">Abra Pendências, veja o que ficou para trás em todos os projetos e vá direto para o editor.</p></div>
     </div>
   </div>
@@ -156,7 +160,7 @@
     <div class="stack" style="gap: 16px">
       <span class="eyebrow" style="color:#98c379">PRIVACIDADE COMO FILOSOFIA</span>
       <h2 class="h2">Seu código fica com você. Sempre.</h2>
-      <p class="muted">No projeto da empresa ou no side project de domingo, seu código e suas conversas com IA não saem da sua máquina. O Crumbs não tem servidor, conta nem telemetria. Ele só olha.</p>
+      <p class="muted">No projeto da empresa ou no side project de domingo, seu código e suas conversas com IA não saem da sua máquina. O crumbs não tem servidor, conta nem telemetria. Ele só olha.</p>
     </div>
     <div class="stack">
       <div class="priv"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#98c379" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><div><strong>Somente leitura</strong><span class="muted">Nunca escreve nos seus projetos nem nas pastas das ferramentas de IA. Git só com comandos de leitura e <code>--no-optional-locks</code>.</span></div></div>
@@ -183,13 +187,60 @@
   </div>
 </section>
 
+<section id="perguntas" class="section" style="padding-top: 0">
+  <div class="wrap stack" style="gap: 32px">
+    <div class="stack">
+      <span class="eyebrow">PERGUNTAS FREQUENTES</span>
+      <h2 class="h2">Antes de pedir o convite</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>É gratuito mesmo?</summary>
+        <div><p>Sim. O crumbs é gratuito, sem plano pago, sem conta e sem cartão.</p></div>
+      </details>
+      <details>
+        <summary>Por que precisa de convite?</summary>
+        <div><p>O app está em beta. Liberar aos poucos nos deixa conversar com quem está usando e corrigir o que aparecer antes de abrir para todo mundo.</p></div>
+      </details>
+      <details>
+        <summary>O que o crumbs lê no meu computador?</summary>
+        <div>
+          <p>Só as pastas que você escolher como raiz e, dentro delas: o estado do git, os documentos do projeto (README, <code>docs/</code>, <code>TODO.md</code> e afins) e a memória e o histórico das ferramentas de IA, como a pasta <code>~/.claude</code>.</p>
+          <p>Arquivos como <code>.env</code>, chaves e credenciais nunca são abertos, e tokens ou senhas que aparecem em textos são mascarados antes de chegar à tela.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Ele altera alguma coisa nos meus projetos?</summary>
+        <div><p>Não. O crumbs é somente leitura: não escreve nos projetos nem nas pastas das ferramentas de IA, e usa o git só com comandos de leitura. O único arquivo que ele grava é a própria configuração.</p></div>
+      </details>
+      <details>
+        <summary>Funciona sem internet?</summary>
+        <div><p>Funciona, e é assim que ele foi feito: o app não faz nenhuma chamada de rede. Nada sai da sua máquina.</p></div>
+      </details>
+      <details>
+        <summary>Por que o Windows ou o macOS avisam na instalação?</summary>
+        <div>
+          <p>No beta, os instaladores ainda não têm assinatura digital, e os sistemas avisam sobre todo app nessa situação.</p>
+          <p><strong>Windows:</strong> no aviso do SmartScreen, clique em “Mais informações” e depois em “Executar assim mesmo”. <strong>macOS:</strong> clique com o botão direito no app e escolha “Abrir”.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Quais ferramentas de IA ele reconhece?</summary>
+        <div><p>Ele identifica projetos que usam Claude Code, Codex, Copilot, Cursor, Windsurf, Gemini e Aider. A leitura de lembretes, memória e sessões, por enquanto, é do Claude Code.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
 <section id="convite" class="invite">
   <div class="wrap">
     <div class="invite-box">
       <div class="stack" style="gap: 16px">
         <span class="eyebrow">BETA FECHADO</span>
+        <p class="script tagline">Nunca perca o fio da meada.</p>
+        <span class="trail" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
         <h2>Volte a qualquer projeto sabendo exatamente onde parou.</h2>
-        <p class="muted">O Crumbs é gratuito e está em beta com devs convidados. Peça o seu acesso: se aprovado, você recebe um convite do GitHub no e-mail da sua conta e baixa o instalador para o seu sistema.</p>
+        <p class="muted">O crumbs é gratuito e está em beta com devs convidados. Peça o seu acesso: se aprovado, você recebe um convite do GitHub no e-mail da sua conta e baixa o instalador para o seu sistema.</p>
         <div class="counter" id="contador" hidden>
           <div><strong id="n-downloads">0</strong><span>downloads</span></div>
           <div><strong id="n-convites">0</strong><span>devs no beta</span></div>
@@ -217,7 +268,7 @@
           <input id="f-site" name="site" tabindex="-1" autocomplete="off">
         </div>
         <button class="btn btn-primary" type="submit" id="f-enviar">Pedir convite</button>
-        <p class="status" id="f-status" role="status" aria-live="polite"></p>
+        <div class="status-row"><span class="trail loading" id="f-carregando" hidden aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><p class="status" id="f-status" role="status" aria-live="polite"></p></div>
         <p class="fine">Seu pedido fica num repositório privado, visível só para o mantenedor. Este site não usa cookies nem rastreamento.</p>
       </form>
     </div>
@@ -227,7 +278,8 @@
 
 <footer>
   <div class="wrap">
-    <span>crumbs · local, somente leitura, sem rede</span>
+    <a class="brand" href="#topo"><img src="img/logo-horizontal.svg" alt="crumbs, voltar ao início" width="89" height="22"></a>
+    <span class="script tagline">Nunca perca o fio da meada.</span>
     <span>© 2026 Higor Azevedo</span>
   </div>
 </footer>
