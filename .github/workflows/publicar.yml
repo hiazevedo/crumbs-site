@@ -5,10 +5,11 @@ name: Publicar site
 #  - convites:  pedidos aprovados no repositório de convites
 # Roda a cada push e de hora em hora. Sem o segredo AUTOMACAO_TOKEN, publica com o stats.json do repositório.
 
-# Por enquanto só manual (aguardando a logo). No lançamento, reativar:
-#   push: { branches: [main] }
-#   schedule: [{ cron: "23 * * * *" }]
 on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "23 * * * *"
   workflow_dispatch:
 
 permissions:
