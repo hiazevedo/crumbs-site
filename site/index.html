@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crumbs — o que você deixou para depois, em um lugar só</title>
+<meta name="description" content="Painel local, somente leitura e sem rede que junta git, documentação e os lembretes das suas conversas com IA, para você retomar qualquer projeto de onde parou.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://*.workers.dev; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#191c21">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/jetbrains-mono-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#topo" aria-label="Crumbs, início">crumbs</a>
+    <nav class="nav" aria-label="Seções do site">
+      <a class="hide-sm" href="#recursos">Recursos</a>
+      <a class="hide-sm" href="#privacidade">Privacidade</a>
+      <a class="hide-sm" href="#plataformas">Plataformas</a>
+      <a class="btn btn-primary" href="#convite">Pedir convite</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="topo" class="hero">
+  <div class="wrap hero-grid">
+    <div class="stack" style="gap: 24px">
+      <span class="pill">Beta fechado · gratuito</span>
+      <h1>O que você deixou <em>para depois</em>, em um lugar só.</h1>
+      <p class="lead">O Crumbs indexa a sua pasta de projetos e junta git, documentação e o rastro das suas conversas com IA. Os lembretes que você pediu para o Claude guardar e as tarefas esquecidas em <code>docs/</code> voltam para a sua frente.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#convite">Pedir acesso ao beta</a>
+        <a class="btn btn-ghost" href="#recursos">Ver recursos</a>
+      </div>
+      <div class="facts">
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#98c379" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Somente leitura</span>
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#98c379" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 2l20 20"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M5 12.9a10 10 0 0 1 5.2-2.8"/><path d="M12 20h.01"/></svg>Zero rede</span>
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#98c379" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/></svg>Windows · macOS · Linux</span>
+      </div>
+    </div>
+
+    <div class="mock" role="img" aria-label="Janela do Crumbs mostrando a lista de projetos e as pendências de um projeto">
+      <div class="mock-bar"><span>Crumbs</span><span class="win"><span>—</span><span>▢</span><span>✕</span></span></div>
+      <div class="mock-body">
+        <div class="mock-side">
+          <div class="mock-nav">Projetos<span>8</span></div>
+          <div class="mock-nav on">Pendências<span class="badge">23</span></div>
+          <div class="mock-nav">Sessões de IA<span>41</span></div>
+          <div class="mock-label">FERRAMENTAS</div>
+          <div class="mock-tool"><span class="dot" style="background:#d19a66"></span>Claude Code</div>
+          <div class="mock-tool"><span class="dot" style="background:#56b6c2"></span>Codex</div>
+          <div class="mock-tool"><span class="dot" style="background:#98c379"></span>Cursor</div>
+        </div>
+        <div class="mock-list">
+          <div class="mock-row on"><span><strong>loja-api</strong><small>main · há 2 dias</small></span><b>9</b></div>
+          <div class="mock-row"><span>painel-web<small>feat/filtros · hoje</small></span><b>6</b></div>
+          <div class="mock-row"><span>infra/terraform<small>main · há 3 semanas</small></span><b>5</b></div>
+          <div class="mock-row"><span>app-mobile<small>develop · ontem</small></span><b>3</b></div>
+          <div class="mock-row"><span>site-institucional<small>main · há 2 meses</small></span><span class="muted">0</span></div>
+        </div>
+        <div class="mock-detail">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><strong style="font-size:15px">loja-api</strong><span class="mock-chip">WSL · Ubuntu</span></div>
+          <span class="mock-btn">Abrir no VS Code</span>
+          <span class="mock-sec" style="color:#e5c07b">PENDÊNCIAS · 3 <span class="muted" style="font-weight:400;letter-spacing:0">da memória do Claude Code</span></span>
+          <div class="mock-card"><span>Refatorar fila de e-mails</span><span class="muted">Adiado: prioridade é o checkout. Retomar depois do lançamento.</span><span style="color:#d19a66">adiado · 12 set</span></div>
+          <div class="mock-card"><span>Backup do banco parado</span><span class="muted">Job noturno desativado durante a migração.</span><span style="color:#98c379">possivelmente resolvido · 28 set</span></div>
+          <span class="mock-sec" style="margin-top:4px">DOCS · AUDITORIA.MD · 6</span>
+          <div class="mock-task"><span style="color:#e06c75;font-weight:800">C1</span><span>Token sem expiração no login</span><span style="color:#e06c75">alta</span></div>
+          <div class="mock-task"><span style="color:#d19a66;font-weight:800">O3</span><span>Índice faltando em pedidos</span><span style="color:#d19a66">média</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band quote">
+  <div class="wrap">
+    <p>“Agora não vamos mexer nessa feature, a prioridade é outra. <em>Deixe salvo na memória para depois.</em>”</p>
+    <p>Você já disse isso para uma IA. O lembrete ficou guardado numa pasta escondida, num projeto que você só vai abrir daqui a dois meses. O Crumbs traz esses lembretes de volta.</p>
+  </div>
+</section>
+
+<section id="recursos" class="section">
+  <div class="wrap stack" style="gap: 48px">
+    <div class="stack" style="max-width: 720px">
+      <span class="eyebrow">RECURSOS</span>
+      <h2 class="h2">Um painel para todos os projetos, com as pendências em primeiro plano.</h2>
+    </div>
+    <div class="grid3">
+      <article class="card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#e5c07b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+        <h3>Lembretes da memória da IA</h3>
+        <p>Lê a memória do Claude Code de cada projeto e separa em Pendências, Regras, Contexto e Referência, com data confiável e link para a sessão de origem.</p>
+      </article>
+      <article class="card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#e06c75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg>
+        <h3>Tarefas esquecidas nos docs</h3>
+        <p>Encontra checkboxes, achados com código e severidade (C1, O3), fases e tabelas de ações em <code>docs/</code>, <code>TODO.md</code> e afins. Relatório antigo que não importa mais? Um clique em “Ignorar documento”.</p>
+      </article>
+      <article class="card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#98c379" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>
+        <h3>“Possivelmente resolvido”</h3>
+        <p>Quando uma nota diz que o problema foi corrigido, ou uma ação concluída cita um achado, o Crumbs marca o item em vez de deixar a lista inflada.</p>
+      </article>
+      <article class="card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c678dd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <h3>Sessões de IA</h3>
+        <p>Todas as conversas com título e prévia do último prompt, por projeto. Lê só o começo e o fim de cada arquivo, então sessões de dezenas de MB abrem na hora.</p>
+      </article>
+      <article class="card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#d19a66" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="9" r="2.5"/><path d="M6 8.5v7"/><path d="M18 11.5c0 3-3 4-9.5 5"/></svg>
+        <h3>Git de relance</h3>
+        <p>Branch, alterações locais, distância do último remoto conhecido, últimos commits e um gráfico de atividade de 30 dias. Sem <code>fetch</code>, sem tocar no repositório.</p>
+      </article>
+      <article class="card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#61afef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
+        <h3>Abrir no VS Code</h3>
+        <p>Do painel para o editor em um clique. Projetos dentro do WSL abrem em modo remoto direto na distro certa.</p>
+      </article>
+    </div>
+    <div class="tools">
+      <span class="label">Reconhece:</span>
+      <span><span class="dot" style="background:#d19a66"></span>Claude Code</span>
+      <span><span class="dot" style="background:#56b6c2"></span>Codex</span>
+      <span><span class="dot" style="background:#c678dd"></span>Copilot</span>
+      <span><span class="dot" style="background:#98c379"></span>Cursor</span>
+      <span><span class="dot" style="background:#61afef"></span>Windsurf</span>
+      <span><span class="dot" style="background:#e5c07b"></span>Gemini</span>
+      <span><span class="dot" style="background:#e06c75"></span>Aider</span>
+    </div>
+  </div>
+</section>
+
+<section style="padding: 0 0 96px">
+  <div class="wrap stack" style="gap: 40px">
+    <div class="stack">
+      <span class="eyebrow">COMO FUNCIONA</span>
+      <h2 class="h2">Aponte para uma pasta. Pronto.</h2>
+    </div>
+    <div class="grid3">
+      <div class="step" style="border-color:#61afef"><span style="color:#61afef;font-weight:800">01</span><h3>Escolha a pasta raiz</h3><p class="muted">A pasta onde ficam os seus projetos. No Windows, pode ser uma pasta dentro do WSL.</p></div>
+      <div class="step" style="border-color:#c678dd"><span style="color:#c678dd;font-weight:800">02</span><h3>O Crumbs descobre</h3><p class="muted">Repositórios, stacks, documentação e ferramentas de IA de cada projeto, em segundos e em paralelo.</p></div>
+      <div class="step" style="border-color:#e06c75"><span style="color:#e06c75;font-weight:800">03</span><h3>Você retoma</h3><p class="muted">Abra Pendências, veja o que ficou para trás em todos os projetos e vá direto para o editor.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="privacidade" class="section band">
+  <div class="wrap two">
+    <div class="stack" style="gap: 16px">
+      <span class="eyebrow" style="color:#98c379">PRIVACIDADE COMO FILOSOFIA</span>
+      <h2 class="h2">Seu código fica com você. Sempre.</h2>
+      <p class="muted">No projeto da empresa ou no side project de domingo, seu código e suas conversas com IA não saem da sua máquina. O Crumbs não tem servidor, conta nem telemetria. Ele só olha.</p>
+    </div>
+    <div class="stack">
+      <div class="priv"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#98c379" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><div><strong>Somente leitura</strong><span class="muted">Nunca escreve nos seus projetos nem nas pastas das ferramentas de IA. Git só com comandos de leitura e <code>--no-optional-locks</code>.</span></div></div>
+      <div class="priv"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#98c379" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 2l20 20"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M12 20h.01"/><path d="M16.7 11.1A10 10 0 0 1 19 12.9"/></svg><div><strong>Zero chamadas de rede</strong><span class="muted">Nenhuma requisição, nem para atualizar. Fontes e ícones vão embutidos no app.</span></div></div>
+      <div class="priv"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#98c379" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><div><strong>Segredos ficam de fora</strong><span class="muted"><code>.env</code>, chaves e credenciais nunca são abertos. Tokens, chaves de API e senhas que aparecem em textos são mascarados antes de chegar à tela.</span></div></div>
+      <div class="priv"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#98c379" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><div><strong>Interface isolada</strong><span class="muted">A interface não acessa disco, shell nem rede. Tudo passa por um núcleo em Rust com permissões mínimas.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="plataformas" class="section">
+  <div class="wrap">
+    <div class="platforms">
+      <div>
+        <h2>Nativo nos três sistemas.</h2>
+        <p class="muted">Núcleo em Rust, app leve em Tauri. No Windows, lê projetos dentro do WSL sem configuração extra: o git roda na própria distro.</p>
+      </div>
+      <div class="os-list">
+        <div class="os"><strong>Windows</strong><span>.msi · .exe</span></div>
+        <div class="os"><strong>macOS</strong><span>.dmg universal</span></div>
+        <div class="os"><strong>Linux</strong><span>.AppImage · .deb</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="convite" class="invite">
+  <div class="wrap">
+    <div class="invite-box">
+      <div class="stack" style="gap: 16px">
+        <span class="eyebrow">BETA FECHADO</span>
+        <h2>Volte a qualquer projeto sabendo exatamente onde parou.</h2>
+        <p class="muted">O Crumbs é gratuito e está em beta com devs convidados. Peça o seu acesso: se aprovado, você recebe um convite do GitHub no e-mail da sua conta e baixa o instalador para o seu sistema.</p>
+        <div class="counter" id="contador" hidden>
+          <div><strong id="n-downloads">0</strong><span>downloads</span></div>
+          <div><strong id="n-convites">0</strong><span>devs no beta</span></div>
+        </div>
+      </div>
+
+      <form class="form" id="form-convite" novalidate>
+        <div class="field">
+          <label for="f-github">Usuário do GitHub</label>
+          <input id="f-github" name="github" autocomplete="username" autocapitalize="off" spellcheck="false" placeholder="seu-usuario" required maxlength="40" aria-describedby="f-github-ajuda">
+          <small id="f-github-ajuda">O convite chega por ele. Não pedimos e-mail.</small>
+        </div>
+        <fieldset class="os-pick">
+          <legend>Sistema</legend>
+          <label><input type="radio" name="sistema" value="Windows" required> Windows</label>
+          <label><input type="radio" name="sistema" value="macOS"> macOS</label>
+          <label><input type="radio" name="sistema" value="Linux"> Linux</label>
+        </fieldset>
+        <div class="field">
+          <label for="f-uso">Como pretende usar <span class="muted" style="font-weight:400">(opcional)</span></label>
+          <textarea id="f-uso" name="uso" maxlength="500" placeholder="Ex.: uns 10 projetos pessoais, uso Claude Code e Cursor."></textarea>
+        </div>
+        <div class="hp" aria-hidden="true">
+          <label for="f-site">Não preencha</label>
+          <input id="f-site" name="site" tabindex="-1" autocomplete="off">
+        </div>
+        <button class="btn btn-primary" type="submit" id="f-enviar">Pedir convite</button>
+        <p class="status" id="f-status" role="status" aria-live="polite"></p>
+        <p class="fine">Seu pedido fica num repositório privado, visível só para o mantenedor. Este site não usa cookies nem rastreamento.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>crumbs · local, somente leitura, sem rede</span>
+    <span>© 2026 Higor Azevedo</span>
+  </div>
+</footer>
+</body>
+</html>
