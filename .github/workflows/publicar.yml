@@ -3,7 +3,7 @@ name: Publicar site
 # Publica a pasta site/ no GitHub Pages e, antes, atualiza stats.json com:
 #  - downloads: soma dos downloads dos instaladores nas releases do repositório de instaladores
 #  - convites:  pedidos aprovados no repositório de convites
-# Roda a cada push e de hora em hora. Sem o segredo AUTOMACAO_TOKEN, publica com o stats.json do repositório.
+# Roda a cada push e de hora em hora. Segredos: BETA_TOKEN (organização crumbs-lab, releases) e AUTOMACAO_TOKEN (conta pessoal, issues de convite).
 
 on:
   push:
@@ -33,23 +33,30 @@ jobs:
       - name: Atualizar contador
         uses: actions/github-script@v8
         env:
-          TEM_TOKEN: ${{ secrets.AUTOMACAO_TOKEN != '' }}
+          BETA_TOKEN: ${{ secrets.BETA_TOKEN }}
+          CONVITES_TOKEN: ${{ secrets.AUTOMACAO_TOKEN }}
+          BETA_OWNER: ${{ vars.BETA_OWNER || 'crumbs-lab' }}
           BETA_REPO: ${{ vars.BETA_REPO || 'crumbs-beta' }}
-          CONVITES_REPO: ${{ vars.CONVITES_REPO || 'crumbs-convites' }}
+          CONVITES_REPO: ${{ vars.CONVITES_REPO || 'hiazevedo/crumbs-convites' }}
         with:
-          github-token: ${{ secrets.AUTOMACAO_TOKEN || github.token }}
           script: |
-            if (process.env.TEM_TOKEN !== "true") { core.notice("Sem AUTOMACAO_TOKEN: contador não atualizado."); return; }
             const fs = require("fs");
-            const owner = context.repo.owner;
-            const instalador = /\.(exe|msi|dmg|AppImage|deb|rpm)$/;
-            let downloads = 0;
-            const releases = await github.paginate(github.rest.repos.listReleases, { owner, repo: process.env.BETA_REPO, per_page: 100 });
-            for (const r of releases) for (const a of r.assets) if (instalador.test(a.name)) downloads += a.download_count;
-            const busca = await github.rest.search.issuesAndPullRequests({
-              q: `repo:${owner}/${process.env.CONVITES_REPO} is:issue label:aprovado`, per_page: 1,
-            });
-            const stats = { downloads, convites: busca.data.total_count, atualizado_em: new Date().toISOString() };
+            const atual = JSON.parse(fs.readFileSync("site/stats.json", "utf8"));
+            const stats = { ...atual };
+            if (process.env.BETA_TOKEN) {
+              const beta = getOctokit(process.env.BETA_TOKEN);
+              const instalador = /\.(exe|msi|dmg|AppImage|deb|rpm)$/;
+              let downloads = 0;
+              const releases = await beta.paginate(beta.rest.repos.listReleases, { owner: process.env.BETA_OWNER, repo: process.env.BETA_REPO, per_page: 100 });
+              for (const r of releases) for (const a of r.assets) if (instalador.test(a.name)) downloads += a.download_count;
+              stats.downloads = downloads;
+            } else core.notice("Sem BETA_TOKEN: downloads não atualizados.");
+            if (process.env.CONVITES_TOKEN) {
+              const conv = getOctokit(process.env.CONVITES_TOKEN);
+              const busca = await conv.rest.search.issuesAndPullRequests({ q: `repo:${process.env.CONVITES_REPO} is:issue label:aprovado`, per_page: 1 });
+              stats.convites = busca.data.total_count;
+            } else core.notice("Sem AUTOMACAO_TOKEN: convites não atualizados.");
+            stats.atualizado_em = new Date().toISOString();
             fs.writeFileSync("site/stats.json", JSON.stringify(stats) + "\n");
             core.info(JSON.stringify(stats));
 
