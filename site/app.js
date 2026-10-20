@@ -1,5 +1,5 @@
-// Endereço do Worker que recebe os pedidos (troque pelo seu depois do deploy na Cloudflare).
-const WORKER_URL = "https://crumbs-convites.SEU-SUBDOMINIO.workers.dev/convite";
+// Endereço do Worker que recebe os pedidos de convite.
+const WORKER_URL = "https://crumbs-convites.higor-com.workers.dev/convite";
 
 const fmt = new Intl.NumberFormat("pt-BR");
 
